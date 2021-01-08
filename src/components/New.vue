@@ -1,27 +1,28 @@
 <template>
     <div>
         <div v-if="!newOpen">
-            <div id="new-button" v-on:click="buttonPressed">
+            <div id="new-button" v-on:click="newPressed">
                 <p id="button-text">NEW</p>
             </div>
         </div>
         <div v-else>
             <div id="new-menu">
-                <p id="button-text" v-on:click="buttonPressed">NEW</p>
+                <p id="button-text" v-on:click="newPressed">NEW</p>
                 <input
                     id="input"
                     type="text"
-                    v-model="message"
                     placeholder="Name:"
                     autocomplete="off"
                 />
                 <input
                     id="input"
-                    type="text"
-                    v-model="message"
+                    type="date"
                     placeholder="Date:"
                     autocomplete="off"
                 />
+                <div id="send-button" v-on:click="sendPressed">
+                    <p id="button-text" :style="{ color: 'black' }">Send</p>
+                </div>
             </div>
         </div>
     </div>
@@ -36,8 +37,11 @@ export default {
         }
     },
     methods: {
-        buttonPressed() {
+        newPressed() {
             this.newOpen = !this.newOpen
+        },
+        sendPressed() {
+            this.newOpen = false
         }
     }
 }
@@ -47,8 +51,8 @@ export default {
 #new-button {
     background-color: #ff00fb;
     border-radius: 8px;
-    width: 120px;
-    height: 50px;
+    width: 100px;
+    height: 45px;
     margin: 50px;
     position: absolute;
     top: 0;
@@ -69,17 +73,31 @@ export default {
     padding: 6px;
     cursor: pointer;
 }
+#send-button {
+    background-color: white;
+    border-radius: 8px;
+    width: 120px;
+    height: 50px;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+}
+#send-button:hover {
+    border: 2px solid black;
+}
 #new-menu {
     background-color: #ff00fb;
-    width: 100%;
+    width: 30%;
     height: 100%;
+    border-radius: 4px;
     position: absolute;
     top: 0;
     right: 0;
+    box-shadow: -5px 0px 15px #181818;
     transition: 0.5s;
 }
 #input {
-    width: 15%;
+    width: 50%;
     padding: 12px 20px;
     margin: auto;
     margin-top: 30px;
@@ -91,8 +109,18 @@ export default {
     transition: 0.25s ease-out;
 }
 #input:focus {
-    border: 2px solid #1c1c1c;
-    width: 20%;
+    border: none;
+    width: 70%;
     transition: 0.25s ease-in;
+}
+@media only screen and (max-width: 1100px) {
+    #new-menu {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 680px) {
+    #new-menu {
+        width: 100%;
+    }
 }
 </style>
