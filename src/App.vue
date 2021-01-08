@@ -1,9 +1,7 @@
 <template>
     <div>
         <h1 id="title">Etkot Kalenteri</h1>
-        <div id="new-button">
-            <p id="button-text">NEW</p>
-        </div>
+        <New />
         <div id="container">
             <Event title="Pikkujoulusauna" />
             <Event title="Pajailta" />
@@ -19,11 +17,13 @@
 
 <script>
 import Event from './components/Event'
+import New from './components/New'
 
 export default {
     name: 'App',
     components: {
-        Event
+        Event,
+        New
     }
 }
 </script>
@@ -37,36 +37,11 @@ body {
     background-color: #1c1c1c;
 }
 #title {
-    color: #f700ff;
+    color: #ff00fb;
     font-family: 'NSimSun';
     text-decoration: underline;
     font-size: 340%;
     padding: 45px;
-}
-#new-button {
-    background-color: #f700ff;
-    border-radius: 10px;
-    width: 120px;
-    height: 50px;
-    margin: 50px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transition: 0.5s;
-}
-#new-button:hover {
-    width: 125px;
-    height: 52px;
-    margin: 48px;
-}
-#button-text {
-    text-align: center;
-    color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif1;
-    font-size: 25px;
-    padding: 6px;
-    cursor: pointer;
 }
 #container {
     display: flex;
