@@ -1,9 +1,16 @@
 <template>
-    <div id="box" :style="{ height: cardOpen ? '250px' : '80px' }">
+    <div id="box" :style="{ 'max-height': cardOpen ? '500px' : '80px' }">
         <p id="name">{{ title }}</p>
-        <div id="button">
-            <p v-if="!cardOpen" id="plus" v-on:click="infoPressed">+</p>
-            <p v-else id="minus" v-on:click="infoPressed">-</p>
+        <div v-if="!cardOpen" id="button" v-on:click="infoPressed">
+            <p id="plus">+</p>
+        </div>
+        <div v-else>
+            <p id="info">1.3.2021</p>
+            <p id="info">4.5.2021</p>
+            <p id="info">12.12.2021</p>
+            <div id="button" v-on:click="infoPressed">
+                <p id="minus">-</p>
+            </div>
         </div>
     </div>
 </template>
@@ -35,11 +42,18 @@ export default {
     padding-bottom: 15px;
     margin: 25px;
     border-radius: 10px;
-    transition: 0.5s;
+    transition: 0.15s ease-out;
+    overflow: hidden;
 }
 #name {
     color: white;
     font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+#info {
+    color: white;
+    font-size: 25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
