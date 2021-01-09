@@ -8,21 +8,34 @@
         <div v-else>
             <div id="new-menu">
                 <p id="button-text" v-on:click="newPressed">NEW</p>
-                <input
-                    id="input"
-                    type="text"
-                    placeholder="Name:"
-                    autocomplete="off"
-                />
-                <input
-                    id="input"
-                    type="date"
-                    placeholder="Date:"
-                    autocomplete="off"
-                />
-                <div id="send-button" v-on:click="sendPressed">
-                    <p id="button-text" :style="{ color: 'black' }">Send</p>
-                </div>
+                <form id="form" @submit="checkForm">
+                    <p v-if="errors.length">
+                        <ul id="error">
+                            <li v-for="(error, index) in errors" :key="`error-${index}`">{{ error }}</li>
+                        </ul>
+                    </p>
+                    <input
+                        id="name-input"
+                        v-model="name"
+                        type="text"
+                        placeholder="Name:"
+                        autocomplete="off"
+                    />
+                    <input
+                        id="date-input"
+                        v-model="date"
+                        type="date"
+                        placeholder="Date:"
+                        autocomplete="off"
+                    />
+                    <select id="time-input" v-model="time" name="time">
+                        <option value="" disabled>Select vote period: (hr)</option>
+                        <option v-for="(option, index) in timeOptions" :key="`error-${index}`">{{ option }}</option>
+                    </select>
+                    <p>
+                        <input id="send-button" type="submit" value="Send" />
+                    </p>
+                </form>
             </div>
         </div>
     </div>
@@ -33,21 +46,46 @@ export default {
     name: 'New',
     data() {
         return {
-            newOpen: false
+            newOpen: false,
+            name: null,
+            date: null,
+            time: null,
+            timeOptions: [1, 2, 3, 4, 5, 6, 7, 8],
+            errors: []
         }
     },
     methods: {
         newPressed() {
             this.newOpen = !this.newOpen
         },
-        sendPressed() {
-            this.newOpen = false
+        checkForm(e) {
+            if (this.name && this.date && this.time) {
+                console.log('Tallessa on, tallessa on')
+                this.newOpen = false
+                return true
+            }
+            this.errors = []
+
+            if (!this.name) {
+                this.errors.push('-Name required-')
+            }
+            if (!this.date) {
+                this.errors.push('-Date required-')
+            }
+            if (!this.time) {
+                this.errors.push('-Vote time required-')
+            }
+            e.preventDefault()
         }
     }
 }
 </script>
 
 <style scoped>
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 
+        Geneva, Verdana, sans-serif;
+}
 #new-button {
     background-color: #ff00fb;
     border-radius: 8px;
@@ -67,20 +105,25 @@ export default {
 #button-text {
     text-align: center;
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif1;
     font-size: 25px;
     padding: 6px;
     cursor: pointer;
 }
+#error {
+    color: white;
+    text-align: center;
+    list-style-type: none;
+}
 #send-button {
     background-color: white;
     border-radius: 8px;
-    width: 120px;
-    height: 50px;
+    width: 100px;
+    height: 46px;
     margin: auto;
     margin-top: 30px;
     display: block;
+    border: none;
+    font-size: 20px;
 }
 #send-button:hover {
     border: 2px solid black;
@@ -96,7 +139,7 @@ export default {
     box-shadow: -5px 0px 15px #181818;
     transition: 0.5s;
 }
-#input {
+#name-input {
     width: 50%;
     padding: 12px 20px;
     margin: auto;
@@ -108,7 +151,41 @@ export default {
     outline: none;
     transition: 0.25s ease-out;
 }
-#input:focus {
+#date-input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    transition: 0.25s ease-out;
+}
+#time-input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    transition: 0.25s ease-out;
+}
+#name-input:focus {
+    border: none;
+    width: 70%;
+    transition: 0.25s ease-in;
+}
+#date-input:focus {
+    border: none;
+    width: 70%;
+    transition: 0.25s ease-in;
+}
+#time-input:focus {
     border: none;
     width: 70%;
     transition: 0.25s ease-in;
