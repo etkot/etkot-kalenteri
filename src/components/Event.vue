@@ -1,21 +1,29 @@
 <template>
-    <div id="box" :style="{ 'max-height': cardOpen ? '500px' : '80px' }">
+    <div id="box" :style="{ 'max-height': cardOpen ? '500px' : '110px' }">
         <p id="name">{{ title }}</p>
-        <div v-if="!cardOpen" id="button" v-on:click="infoPressed">
-            <p id="plus">+</p>
+        <div v-if="!voteActive">
+            <p id="info">{{ setDate }}</p>
         </div>
         <div v-else>
-            <div v-if="dates.length">
-                <ul id="info">
-                    <li v-for="(date, index) in dates" :key="`error-${index}`">
-                        <input id="checkbox" type="checkbox" /> {{ date }}
-                    </li>
-                    <p>
-                        <input id="vote-button" type="submit" value="Vote" />
-                    </p>
-                </ul>
-                <div id="button" v-on:click="infoPressed">
-                    <p id="minus">-</p>
+            <div v-if="setDate && !cardOpen">
+                <p id="info">{{ setDate }}</p>
+            </div>
+            <div v-if="!cardOpen" id="button" v-on:click="infoPressed">
+                <p id="plus">+</p>
+            </div>
+            <div v-else>
+                <div v-if="voteDates.length">
+                    <ul id="info">
+                        <li v-for="(date, index) in voteDates" :key="`error-${index}`">
+                            <input id="checkbox" type="checkbox" /> {{ date }}
+                        </li>
+                        <p>
+                            <input id="vote-button" type="submit" value="Vote" />
+                        </p>
+                    </ul>
+                    <div id="button" v-on:click="infoPressed">
+                        <p id="minus">-</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -23,11 +31,16 @@
 </template>
 
 <script>
+
+//TODO: redo the card opening
+
 export default {
     name: 'Event',
     props: {
         title: String,
-        dates: Array
+        setDate: String,
+        voteDates: Array,
+        voteActive: Boolean
     },
     data() {
         return {

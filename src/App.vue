@@ -3,14 +3,21 @@
         <h1 id="title">Etkot Kalenteri</h1>
         <New />
         <div id="container">
-            <Event v-bind:title="'Pikkujoulusauna'" v-bind:dates="dates" />
-            <Event v-bind:title="'Pajailta'" v-bind:dates="dates" />
-            <Event title="Etkot-Kyykkä" v-bind:dates="dates" />
-            <Event title="Pietarin reissu" v-bind:dates="dates" />
-            <Event title="Minuuttipeli" v-bind:dates="dates" />
-            <Event title="Keilausiltama" v-bind:dates="dates" />
-            <Event title="Kaljagolf" v-bind:dates="dates" />
-            <Event title="Random ryybs ilta" v-bind:dates="dates" />
+            <Event
+                v-bind:title="'Huippu bileet'"
+                v-bind:setDate="'1.1.2100'"
+                v-bind:voteDates="['1.1.2100', '12.12.2100']"
+                v-bind:voteActive="true"
+            />
+            <Event
+                v-bind:title="'Kaljagolf'"
+                v-bind:setDate="'1.3.2012'"
+                v-bind:voteDates="['1.1.2100', '1.3.2012']"
+                v-bind:voteActive="false"
+            />
+            <div v-for="(event, index) in events" :key="`error-${index}`">
+                <Event v-bind:title="event" v-bind:voteDates="dates" v-bind:voteActive="true" />
+            </div>
         </div>
     </div>
 </template>
@@ -23,13 +30,22 @@ export default {
     name: 'App',
     components: {
         Event,
-        New
+        New,
     },
     data() {
         return {
-            dates: ['1.4.2021', '28.6.2021', '31.10.2030']
+            dates: ['1.4.2021', '28.6.2021', '31.10.2030'],
+            events: [
+                'Pajailta',
+                'Pietarin reissu',
+                'Keilausiltama',
+                'Etkotkyykkä',
+                'Random ryybs extravaganza',
+                'Pikkujoulusauna',
+                'Minuuttipeli',
+            ],
         }
-    }
+    },
 }
 </script>
 

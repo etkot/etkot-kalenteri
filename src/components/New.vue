@@ -15,20 +15,20 @@
                         </ul>
                     </p>
                     <input
-                        id="name-input"
+                        id="input"
                         v-model="name"
                         type="text"
                         placeholder="Name:"
                         autocomplete="off"
                     />
                     <input
-                        id="date-input"
+                        id="input"
                         v-model="date"
                         type="date"
                         placeholder="Date:"
                         autocomplete="off"
                     />
-                    <select id="time-input" v-model="time" name="time">
+                    <select id="input" v-model="time" name="time">
                         <option value="" disabled>Select vote period: (hr)</option>
                         <option v-for="(option, index) in timeOptions" :key="`error-${index}`">{{ option }}</option>
                     </select>
@@ -122,7 +122,7 @@ export default {
     background-color: white;
     border-radius: 8px;
     width: 100px;
-    height: 46px;
+    height: 45px;
     margin: auto;
     margin-top: 30px;
     display: block;
@@ -131,6 +131,10 @@ export default {
 }
 #send-button:hover {
     border: 2px solid black;
+}
+#send-button:focus {
+    outline: none;
+    box-shadow: none;
 }
 #new-menu {
     background-color: #ff00fb;
@@ -143,7 +147,7 @@ export default {
     box-shadow: -5px 0px 15px #181818;
     transition: 0.5s;
 }
-#name-input {
+#input {
     width: 50%;
     padding: 12px 20px;
     margin: auto;
@@ -155,41 +159,7 @@ export default {
     outline: none;
     transition: 0.25s ease-out;
 }
-#date-input {
-    width: 50%;
-    padding: 12px 20px;
-    margin: auto;
-    margin-top: 30px;
-    display: block;
-    box-sizing: border-box;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    transition: 0.25s ease-out;
-}
-#time-input {
-    width: 50%;
-    padding: 12px 20px;
-    margin: auto;
-    margin-top: 30px;
-    display: block;
-    box-sizing: border-box;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    transition: 0.25s ease-out;
-}
-#name-input:focus {
-    border: none;
-    width: 70%;
-    transition: 0.25s ease-in;
-}
-#date-input:focus {
-    border: none;
-    width: 70%;
-    transition: 0.25s ease-in;
-}
-#time-input:focus {
+#input:focus {
     border: none;
     width: 70%;
     transition: 0.25s ease-in;
