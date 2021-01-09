@@ -75,6 +75,10 @@ export default {
             if (!this.time) {
                 this.errors.push('-Vote time required-')
             }
+            setTimeout(() => {
+                this.errors = []
+            }, 2000)
+            
             e.preventDefault()
         }
     }

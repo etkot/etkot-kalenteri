@@ -3,14 +3,14 @@
         <h1 id="title">Etkot Kalenteri</h1>
         <New />
         <div id="container">
-            <Event title="Pikkujoulusauna" />
-            <Event title="Pajailta" />
-            <Event title="Etkot-Kyykkä" />
-            <Event title="Pietarin reissu" />
-            <Event title="Minuuttipeli" />
-            <Event title="Keilausiltama" />
-            <Event title="Kaljagolf" />
-            <Event title="Random ryybs ilta" />
+            <Event v-bind:title="'Pikkujoulusauna'" v-bind:dates="dates" />
+            <Event v-bind:title="'Pajailta'" v-bind:dates="dates" />
+            <Event title="Etkot-Kyykkä" v-bind:dates="dates" />
+            <Event title="Pietarin reissu" v-bind:dates="dates" />
+            <Event title="Minuuttipeli" v-bind:dates="dates" />
+            <Event title="Keilausiltama" v-bind:dates="dates" />
+            <Event title="Kaljagolf" v-bind:dates="dates" />
+            <Event title="Random ryybs ilta" v-bind:dates="dates" />
         </div>
     </div>
 </template>
@@ -24,6 +24,11 @@ export default {
     components: {
         Event,
         New
+    },
+    data() {
+        return {
+            dates: ['1.4.2021', '28.6.2021', '31.10.2030']
+        }
     }
 }
 </script>
