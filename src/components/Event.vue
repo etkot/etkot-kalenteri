@@ -31,9 +31,6 @@
 </template>
 
 <script>
-
-//TODO: redo the card opening
-
 export default {
     name: 'Event',
     props: {
@@ -58,6 +55,7 @@ export default {
 <style scoped>
 #box {
     background-color: #404040;
+    height: max-content;
     min-width: 200px;
     padding: 30px;
     padding-bottom: 15px;
@@ -107,13 +105,25 @@ export default {
     border: 2px solid white;
 }
 #checkbox {
+    appearance: none;
     float: left;
-    height: 18px;
-    width: 18px;
+    height: 24px;
+    width: 24px;
     margin-top: 9px;
-    margin-left: 8px;
+    margin-left: auto;
     margin-right: -8px;
-    background-color: #ff00fb;
+    background-color: #ff0ffb;
+    border-radius: 4px;
+    outline: none;
+}
+#checkbox:checked::after {
+    content: '\2714';
+    font-size: 18px;
+    color: white;
+    margin: 4px;
+}
+#checkbox:hover {
+    border: 1px solid white;
 }
 #plus {
     color: white;

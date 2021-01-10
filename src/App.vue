@@ -4,19 +4,19 @@
         <New />
         <div id="container">
             <Event
-                v-bind:title="'Huippu bileet'"
-                v-bind:setDate="'1.1.2100'"
-                v-bind:voteDates="['1.1.2100', '12.12.2100']"
-                v-bind:voteActive="true"
+                :title="'Huippu bileet'"
+                :setDate="'1.1.2100'"
+                :voteDates="['1.1.2100', '12.12.2100']"
+                :voteActive="true"
             />
             <Event
-                v-bind:title="'Kaljagolf'"
-                v-bind:setDate="'1.3.2012'"
-                v-bind:voteDates="['1.1.2100', '1.3.2012']"
-                v-bind:voteActive="false"
+                :title="'Kaljagolf'"
+                :setDate="'1.3.2012'"
+                :voteDates="['1.1.2100', '1.3.2012']"
+                :voteActive="false"
             />
             <div v-for="(event, index) in events" :key="`error-${index}`">
-                <Event v-bind:title="event" v-bind:voteDates="dates" v-bind:voteActive="true" />
+                <Event :title="event" :voteDates="dates" :voteActive="true" />
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@ export default {
     name: 'App',
     components: {
         Event,
-        New,
+        New
     },
     data() {
         return {
@@ -42,10 +42,10 @@ export default {
                 'Etkotkyykkä',
                 'Random ryybs extravaganza',
                 'Pikkujoulusauna',
-                'Minuuttipeli',
-            ],
+                'Minuuttipeli'
+            ]
         }
-    },
+    }
 }
 </script>
 
