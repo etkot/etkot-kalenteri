@@ -28,8 +28,8 @@
                         placeholder="Date:"
                         autocomplete="off"
                     />
-                    <select id="input" v-model="time" name="time">
-                        <option value="" disabled>Select vote period: (hr)</option>
+                    <select id="input" v-model="time" name="time" required>
+                        <option value="" disabled hidden selected>Select vote period: (hr)</option>
                         <option v-for="(option, index) in timeOptions" :key="`error-${index}`">{{ option }}</option>
                     </select>
                     <p>
@@ -148,7 +148,7 @@ export default {
     transition: 0.5s;
 }
 #input {
-    width: 50%;
+    width: 60%;
     padding: 12px 20px;
     margin: auto;
     margin-top: 30px;
