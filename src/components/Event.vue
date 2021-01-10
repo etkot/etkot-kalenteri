@@ -56,7 +56,8 @@ export default {
 #box {
     background-color: #404040;
     height: max-content;
-    min-width: 200px;
+    width: fit-content;
+    align-self: center;
     padding: 30px;
     padding-bottom: 15px;
     margin: 25px;

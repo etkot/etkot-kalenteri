@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 id="title">Etkot Kalenteri</h1>
+        <img id="logo" src="./assets/etcalendar.png" alt="Logo" />
         <New />
         <div id="container">
             <Event
@@ -35,15 +35,7 @@ export default {
     data() {
         return {
             dates: ['1.4.2021', '28.6.2021', '31.10.2030'],
-            events: [
-                'Pajailta',
-                'Pietarin reissu',
-                'Keilausiltama',
-                'Etkotkyykkä',
-                'Random ryybs extravaganza',
-                'Pikkujoulusauna',
-                'Minuuttipeli'
-            ]
+            events: ['Etkot-Kyykkä', 'Keilausiltama']
         }
     }
 }
@@ -63,10 +55,17 @@ body {
     text-decoration: underline;
     font-size: 340%;
     padding: 45px;
+    text-align: center;
+}
+#logo {
+    width: 18%;
+    height: 8%;
+    display: block;
+    margin: auto;
 }
 #container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     margin-left: 70px;

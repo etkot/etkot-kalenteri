@@ -8,7 +8,7 @@
         <div v-else>
             <div id="new-menu">
                 <p id="button-text" v-on:click="newPressed">NEW</p>
-                <form id="form" @submit="checkForm">
+                <form id="form" @submit="checkForm" >
                     <p v-if="errors.length">
                         <ul id="error">
                             <li v-for="(error, index) in errors" :key="`error-${index}`">{{ error }}</li>
@@ -28,8 +28,8 @@
                         placeholder="Date:"
                         autocomplete="off"
                     />
-                    <select id="input" v-model="time" name="time" required>
-                        <option value="" disabled hidden selected>Select vote period: (hr)</option>
+                    <select id="input" v-model="time" name="time" autocomplete="off">
+                        <option value="" selected disabled >Select vote time (hr):</option>
                         <option v-for="(option, index) in timeOptions" :key="`error-${index}`">{{ option }}</option>
                     </select>
                     <p>
@@ -50,7 +50,7 @@ export default {
             name: null,
             date: null,
             time: null,
-            timeOptions: [1, 2, 3, 4, 5, 6, 7, 8],
+            timeOptions: [1, 2, 3, 4, 5, 6, 7, 8, 9 ,10],
             errors: []
         }
     },
