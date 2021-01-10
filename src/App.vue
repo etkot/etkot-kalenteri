@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="css-selector">
         <img id="logo" src="./assets/etcalendar.png" alt="Logo" />
         <New />
         <div id="container">
@@ -46,17 +46,32 @@ export default {
     padding: 0;
     margin: 0;
 }
-body {
-    background-color: #1c1c1c;
+
+#css-selector {
+    background: linear-gradient(224deg, #02f0a5, #000000, #000000, #000000, #02f0a5);
+    background-size: 1000% 1000%;
+
+    -webkit-animation: AnimationName 60s ease infinite;
+    -moz-animation: AnimationName 60s ease infinite;
+    animation: AnimationName 60s ease infinite;
 }
-#title {
-    color: #ff00fb;
-    font-family: 'NSimSun';
-    text-decoration: underline;
-    font-size: 340%;
-    padding: 45px;
-    text-align: center;
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 60%}
+    100%{background-position:0% 50%}
 }
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 60%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 60%}
+    100%{background-position:0% 50%}
+}
+
 #logo {
     width: 18%;
     height: 8%;
