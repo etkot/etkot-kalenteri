@@ -56,7 +56,7 @@ export default {
 
 <style scoped>
 #box {
-    background-color:#000a08;
+    background-color: #000a08;
     height: max-content;
     width: 800px;
     align-self: center;
@@ -118,7 +118,7 @@ export default {
     margin-top: 9px;
     margin-left: 250px;
     margin-right: -260px;
-    background-color:#03c285;
+    background-color: #03c285;
     border-radius: 4px;
     outline: none;
 }
@@ -147,10 +147,15 @@ export default {
     #box {
         width: 50%;
     }
+    #checkbox {
+        margin-left: 10px;
+    }
 }
 @media only screen and (max-width: 680px) {
     #box {
-        width: 50%;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 20px;
     }
 }
 </style>

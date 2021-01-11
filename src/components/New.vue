@@ -170,6 +170,9 @@ export default {
     }
 }
 @media only screen and (max-width: 680px) {
+    #new-button {
+        width: 80px;
+    }
     #new-menu {
         width: 100%;
     }

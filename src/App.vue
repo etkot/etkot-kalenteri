@@ -57,24 +57,41 @@ body {
 }
 
 @-webkit-keyframes BackgroundWave {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 60%;}
-    100% {background-position: 0% 50%;}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 60%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 @-moz-keyframes BackgroundWave {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 60%;}
-    100% {background-position: 0% 50%;}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 60%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 @keyframes BackgroundWave {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 60%;}
-    100% {background-position: 0% 50%;}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 60%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #logo {
     width: 15%;
-    height: 5%;
     display: block;
     margin: auto;
 }
@@ -85,6 +102,23 @@ body {
     justify-content: center;
     margin-left: 70px;
     margin-right: 70px;
-    margin-top: 15px;
+    margin-top: 25px;
+}
+@media only screen and (max-width: 1100px) {
+    #logo {
+        width: 30%;
+    }
+}
+@media only screen and (max-width: 680px) {
+    #logo {
+        width: 45%;
+    }
+    #container {
+        display: block;
+        margin: 20px;
+    }
+    #logo {
+        margin-left: 40px;
+    }
 }
 </style>
