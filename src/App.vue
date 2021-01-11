@@ -15,7 +15,7 @@
                 :voteDates="['1.1.2100', '1.3.2012']"
                 :voteActive="false"
             />
-            <div v-for="(event, index) in events" :key="`error-${index}`">
+            <div id="container" v-for="(event, index) in events" :key="`error-${index}`">
                 <Event :title="event" :voteDates="dates" :voteActive="true" />
             </div>
         </div>
@@ -57,37 +57,19 @@ body {
 }
 
 @-webkit-keyframes BackgroundWave {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 60%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 60%;}
+    100% {background-position: 0% 50%;}
 }
 @-moz-keyframes BackgroundWave {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 60%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 60%;}
+    100% {background-position: 0% 50%;}
 }
 @keyframes BackgroundWave {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 60%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 60%;}
+    100% {background-position: 0% 50%;}
 }
 
 #logo {
@@ -103,6 +85,6 @@ body {
     justify-content: center;
     margin-left: 70px;
     margin-right: 70px;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 </style>

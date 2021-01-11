@@ -91,7 +91,7 @@ export default {
         Geneva, Verdana, sans-serif;
 }
 #new-button {
-    background-color:#02f0a5;
+    background-color:#03c285;
     border-radius: 8px;
     width: 100px;
     height: 45px;
@@ -137,7 +137,7 @@ export default {
     box-shadow: none;
 }
 #new-menu {
-    background-color: #02f0a5;
+    background-color:#03c285;
     width: 30%;
     height: 100%;
     border-radius: 4px;

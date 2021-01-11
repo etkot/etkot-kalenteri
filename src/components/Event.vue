@@ -31,7 +31,7 @@
 </template>
 
 <script>
-//Event cards are kinda broken atm
+//Event cards are a bit less broken atm
 
 export default {
     name: 'Event',
@@ -56,14 +56,17 @@ export default {
 
 <style scoped>
 #box {
-    background-color: #404040;
+    background-color:#000a08;
     height: max-content;
-    width: fit-content;
+    width: 800px;
     align-self: center;
     padding: 30px;
     padding-bottom: 15px;
-    margin: 25px;
-    border-radius: 10px;
+    margin: 15px;
+    border-radius: 25px;
+    border-style: solid;
+    border: 1px solid #02f0a5;
+    box-shadow: 0 0 5px rgba(2, 240, 165, 1);
     transition: 0.15s ease-out;
     overflow: hidden;
 }
@@ -82,7 +85,7 @@ export default {
     list-style-type: none;
 }
 #button {
-    background-color: grey;
+    background-color: #03c285;
     border-radius: 100%;
     width: 25px;
     height: 25px;
@@ -91,7 +94,7 @@ export default {
     transition: 0.5s;
 }
 #vote-button {
-    background-color: #02f0a5;
+    background-color: #03c285;
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
         Geneva, Verdana, sans-serif;
@@ -113,9 +116,9 @@ export default {
     height: 24px;
     width: 24px;
     margin-top: 9px;
-    margin-left: auto;
-    margin-right: -8px;
-    background-color: #02f0a5;
+    margin-left: 250px;
+    margin-right: -260px;
+    background-color:#03c285;
     border-radius: 4px;
     outline: none;
 }
@@ -139,5 +142,15 @@ export default {
     font-size: 20px;
     text-align: center;
     cursor: pointer;
+}
+@media only screen and (max-width: 1100px) {
+    #box {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 680px) {
+    #box {
+        width: 50%;
+    }
 }
 </style>
