@@ -31,6 +31,8 @@
 </template>
 
 <script>
+//Event cards are kinda broken atm
+
 export default {
     name: 'Event',
     props: {
@@ -89,7 +91,7 @@ export default {
     transition: 0.5s;
 }
 #vote-button {
-    background-color: #ff00fb;
+    background-color: #02f0a5;
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
         Geneva, Verdana, sans-serif;
@@ -113,7 +115,7 @@ export default {
     margin-top: 9px;
     margin-left: auto;
     margin-right: -8px;
-    background-color: #ff0ffb;
+    background-color: #02f0a5;
     border-radius: 4px;
     outline: none;
 }

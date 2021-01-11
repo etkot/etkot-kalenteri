@@ -1,5 +1,5 @@
 <template>
-    <div id="css-selector">
+    <div>
         <img id="logo" src="./assets/etcalendar.png" alt="Logo" />
         <New />
         <div id="container">
@@ -47,34 +47,52 @@ export default {
     margin: 0;
 }
 
-#css-selector {
+body {
     background: linear-gradient(224deg, #02f0a5, #000000, #000000, #000000, #02f0a5);
     background-size: 1000% 1000%;
 
-    -webkit-animation: AnimationName 60s ease infinite;
-    -moz-animation: AnimationName 60s ease infinite;
-    animation: AnimationName 60s ease infinite;
+    -webkit-animation: BackgroundWave 60s ease infinite;
+    -moz-animation: BackgroundWave 60s ease infinite;
+    animation: BackgroundWave 60s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 60%}
-    100%{background-position:0% 50%}
+@-webkit-keyframes BackgroundWave {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 60%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 60%}
-    100%{background-position:0% 50%}
+@-moz-keyframes BackgroundWave {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 60%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
-@keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 60%}
-    100%{background-position:0% 50%}
+@keyframes BackgroundWave {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 60%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #logo {
-    width: 18%;
-    height: 8%;
+    width: 15%;
+    height: 5%;
     display: block;
     margin: auto;
 }
