@@ -25,6 +25,7 @@
 <script>
 import Event from './components/Event'
 import New from './components/New'
+import EventService from './services/eventsService'
 
 export default {
     name: 'App',
@@ -35,7 +36,13 @@ export default {
     data() {
         return {
             dates: ['1.4.2021', '28.6.2021', '31.10.2030'],
-            events: ['Etkot-Kyykkä', 'Keilausiltama']
+            events: ['Etkot-Kyykkä', 'Keilausiltama'],
+            bevents: {}
+        }
+    },
+    methods: {
+        getEvents() {
+            this.bevents = EventService.getEvents()
         }
     }
 }

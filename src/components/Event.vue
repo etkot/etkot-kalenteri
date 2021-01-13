@@ -58,7 +58,7 @@ export default {
 #box {
     background-color: #000a08;
     height: max-content;
-    width: 800px;
+    width: 600px;
     align-self: center;
     padding: 30px;
     padding-bottom: 15px;
@@ -73,14 +73,14 @@ export default {
 #name {
     color: white;
     font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lato';
     text-align: center;
     margin-bottom: 5px;
 }
 #info {
     color: white;
     font-size: 25px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lato';
     text-align: center;
     list-style-type: none;
 }
@@ -113,10 +113,10 @@ export default {
 #checkbox {
     appearance: none;
     float: left;
-    height: 24px;
-    width: 24px;
+    height: 22px;
+    width: 22px;
     margin-top: 9px;
-    margin-left: 250px;
+    margin-left: 150px;
     margin-right: -260px;
     background-color: #03c285;
     border-radius: 4px;
@@ -149,6 +149,9 @@ export default {
     }
     #checkbox {
         margin-left: 10px;
+    }
+    #checkbox {
+        margin-left: auto;
     }
 }
 @media only screen and (max-width: 680px) {
