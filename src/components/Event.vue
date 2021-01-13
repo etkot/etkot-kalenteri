@@ -89,9 +89,15 @@ export default {
     border-radius: 100%;
     width: 25px;
     height: 25px;
+    opacity: .75;
     margin: auto;
     margin-top: 10px;
     transition: 0.5s;
+}
+#button:hover {
+    border: 1px solidrgb(3, 194, 133, 1);
+    box-shadow: 0 5px 25px rgb(3, 194, 133, 0.4);
+    opacity: 1;
 }
 #vote-button {
     background-color: #03c285;
@@ -108,7 +114,9 @@ export default {
     transition: 0.5s;
 }
 #vote-button:hover {
-    border: 2px solid white;
+    border: 1px solidrgb(3, 194, 133, 1);
+    box-shadow: 0 5px 25px rgb(3, 194, 133, 0.4);
+    opacity: 1;
 }
 #checkbox {
     appearance: none;
@@ -121,6 +129,7 @@ export default {
     background-color: #03c285;
     border-radius: 4px;
     outline: none;
+    transition: 0.5s;
 }
 #checkbox:checked::after {
     content: '\2714';
@@ -129,7 +138,9 @@ export default {
     margin: 4px;
 }
 #checkbox:hover {
-    border: 1px solid white;
+    border: 1px solidrgb(3, 194, 133, 1);
+    box-shadow: 0 5px 25px rgb(3, 194, 133, 0.4);
+    opacity: 1;
 }
 #plus {
     color: white;
