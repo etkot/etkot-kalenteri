@@ -105,8 +105,8 @@ export default {
     width: 125px;
     height: 52px;
     margin: 48px;
-    border: 1px solidrgb(3, 194, 133, 1);
-    box-shadow: 0 5px 35px rgb(3, 194, 133, 0.4);
+    border: 1px solid #03c285;
+    box-shadow: 0 0px 35px #03c28566;
     opacity: 1;
 }
 #button-text {
