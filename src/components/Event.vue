@@ -66,9 +66,13 @@ export default {
     border-radius: 25px;
     border-style: solid;
     border: 1px solid #02f0a5;
-    box-shadow: 0 0 5px rgba(2, 240, 165, 1);
-    transition: 0.15s ease-out;
+    box-shadow: 0 0 5px #02f0a5;
+    transition: 0.75s ease-out;
+    transition: padding-bottom 0.25s ease-out;
     overflow: hidden;
+}
+#box:hover {
+    padding-bottom: 20px;
 }
 #name {
     color: white;
@@ -89,14 +93,13 @@ export default {
     border-radius: 100%;
     width: 25px;
     height: 25px;
-    opacity: .75;
     margin: auto;
     margin-top: 10px;
     transition: 0.5s;
 }
 #button:hover {
-    border: 1px solidrgb(3, 194, 133, 1);
-    box-shadow: 0 5px 25px rgb(3, 194, 133, 0.4);
+    background-color: #02f0a5;
+    box-shadow: 0 0px 15px #03c286;
     opacity: 1;
 }
 #vote-button {
@@ -114,8 +117,7 @@ export default {
     transition: 0.5s;
 }
 #vote-button:hover {
-    border: 1px solidrgb(3, 194, 133, 1);
-    box-shadow: 0 5px 25px rgb(3, 194, 133, 0.4);
+    box-shadow: 0 0px 25px #03c28566;
     opacity: 1;
 }
 #checkbox {
@@ -138,8 +140,8 @@ export default {
     margin: 4px;
 }
 #checkbox:hover {
-    border: 1px solidrgb(3, 194, 133, 1);
-    box-shadow: 0 5px 25px rgb(3, 194, 133, 0.4);
+    border: 1px solid #03c285;
+    box-shadow: 0 5px 25px #03c28566;
     opacity: 1;
 }
 #plus {
