@@ -18,6 +18,12 @@
             <div id="container" v-for="(event, index) in events" :key="`error-${index}`">
                 <Event :title="event" :voteDates="dates" :voteActive="true" />
             </div>
+            <Event
+                :title="'Kaljagolf'"
+                :setDate="'1.3.2012'"
+                :voteDates="['1.1.2100', '1.3.2012']"
+                :voteActive="false"
+            />
         </div>
     </div>
 </template>
