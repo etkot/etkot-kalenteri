@@ -4,13 +4,13 @@
         <New />
         <div id="container">
             <Event
-                :title="'Huippu bileet'"
+                :title="'Valmistumis bileet'"
                 :setDate="'1.1.2100'"
                 :voteDates="['1.1.2100', '12.12.2100']"
                 :voteActive="true"
             />
             <Event
-                :title="'Kaljagolf'"
+                :title="'Frisbeegolf seikkailu'"
                 :setDate="'1.3.2012'"
                 :voteDates="['1.1.2100', '1.3.2012']"
                 :voteActive="false"
@@ -19,7 +19,7 @@
                 <Event :title="event" :voteDates="dates" :voteActive="true" />
             </div>
             <Event
-                :title="'Kaljagolf'"
+                :title="'Pietarin matka'"
                 :setDate="'1.3.2012'"
                 :voteDates="['1.1.2100', '1.3.2012']"
                 :voteActive="false"
